@@ -53,8 +53,12 @@ if (cluster.isPrimary) {
         }
         return;
       }
-      io.emit('chat message', msg, result.lastID);
+      socket.broadcast.emit('chat message', msg, result.lastID);
       callback();
+    });
+
+    socket.on('typing', (user) => { 
+      socket.broadcast.emit('typing', user);
     });
 
     if (!socket.recovered) {
