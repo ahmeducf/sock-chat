@@ -31,3 +31,13 @@ socket.on('chat message', (msg, serverOffset) => {
   window.scrollTo(0, document.body.scrollHeight);
   socket.auth.serverOffset = serverOffset;
 });
+
+['user connected', 'user disconnected'].forEach((event) => {
+  socket.on(event, (socketId) => {
+    const item = document.createElement('li');
+    item.style.color = 'red';
+    item.textContent = `${event}: ${socketId}`;
+    messages.appendChild(item);
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+});
