@@ -1,0 +1,29 @@
+{
+	"name": "socket-chat-example",
+	"version": "0.0.1",
+	"description": "Using socket.io to make a simple chat app",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@socket.io/cluster-adapter": "^0.2.2",
+		"express": "^4.18.2",
+		"socket.io": "^4.7.2",
+		"sqlite": "^5.1.1",
+		"sqlite3": "^5.1.6"
+	},
+	"devDependencies": {
+		"eslint": "^8.56.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-import": "^2.29.1",
+		"nodemon": "^3.0.2",
+		"prettier": "3.1.1"
+	}
+}
