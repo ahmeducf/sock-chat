@@ -34,10 +34,11 @@ if (cluster.isPrimary) {
   });
 
   io.on('connection', async (socket) => {
-    socket.broadcast.emit('user connected', socket.id);
+    const { nickname } = socket.handshake.auth;
+    socket.broadcast.emit('user connected', nickname);
 
     socket.on('disconnect', () => { 
-      socket.broadcast.emit('user disconnected', socket.id);
+      socket.broadcast.emit('user disconnected', nickname);
     });
     socket.on('chat message', async (msg, clientOffset, callback) => {
       let result;

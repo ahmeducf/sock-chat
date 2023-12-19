@@ -1,11 +1,14 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-undef */
+const nickname = prompt('What is your nickname?');
 
 let counter = 0;
 
 const socket = io({
   auth: {
     serverOffset: 0,
+    nickname,
   },
   ackTimeout: 10000,
   retries: 3,
