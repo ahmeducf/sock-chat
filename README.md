@@ -4,6 +4,7 @@ Exploring WebSockets with Node.js and Socket.io by creating a simple chat applic
 
 ## Features
 
+- HTTP Long Polling fallback for browsers that don't support WebSockets.
 - Broadcast a message to connected users when someone connects or disconnects.
 - Exactly once message delivery.
 - Show who is typing.
